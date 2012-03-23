@@ -1,0 +1,31 @@
+=============================
+= SG7_Constant_Adapter_File =
+=============================
+
+Třída: SG7_Constant_Adapter_File
+Implementuje: SG7_Constant_Adapter_Interface
+
+Třída zprostředkovává načítání konstant ze souboru. Jako parametr konstruktoru se předává asociativní pole s prvky:
+
+*string fileName - jméno souboru k otevření
+*string delimiter (=) - oddělovač páru klíč - hodnota
+*string rowDelimiter (\n) - oddělovač řádků
+
+Hodnoty delimiter a rowDelimiter jsou nepovinné a hodnoty jsou uvedeny v závorkách
+
+Vlasntosti
+==========
+
+-_data array
+Data načtená ze souboru, naprasovaná na páry klíč - hodnota a uložená do asociativního pole
+
+-_fileName string
+Jméno souboru s daty
+
+Metody
+======
+-_parse($data)
+Naprasuje informace uložené v @param $data a uloží je @property $_data
+
+-_save()
+Složí data v @property $data a uloží je do souboru jménem @property $fileName

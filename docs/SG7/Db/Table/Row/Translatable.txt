@@ -1,0 +1,39 @@
+=================================
+= SG7_Db_Table_Row_Translatable =
+=================================
+
+Třída: SG7_Db_Table_Row_Translatable
+Předek: SG7_Db_Table_Row_Abstract
+Typ: Abstract
+
+Při vytváření instance si načte parametry potřebné pro získání překladů.
+Implementuje metodu SG7_Db_Table_Row_Translatable::translate(), která načte příslušný překlad.
+Pokud překlad neexistuje, vyhodí výjimku a nechá původní data nedotčena.
+Přeložitelná data jsou v případě načtení překladu uložena v SG7_Db_Table_Row_Translatable::$_originalData.
+Řádek s překladem je uložen ve zvláštní vlastnosti SG7_Db_Table_Row_Translatable::$_tranlation a je přístupný přes metodu SG7_Db_Table_Row_Translatable::translation().
+Pokud dojde k načtení překládaných dat, jejich změně a následnému uložení, původní řádek nebude ovlivněn.
+Změny lze vrátit pomocí metody SG7_Db_Table_Row_Translatable::restoreTrans().
+
+Vlastnosti
+==========
+
+-_transConfig array
+asociativní pole obsahující informace o překladech
+
+#_originalData array
+Původní data, která byla přepsána překladem
+
+Metody
+======
+
++restoreTrans() SG7_Db_Table_Row_Translatable
+Přeložená data přepíše nepřeloženými a smaže nepotřebná data
+
++save()
+Uloží změny tak, aby v případě načteného překladu nebyl ovlivněn předchozí řádek
+
++translate($lang)
+Načte překlad definovaný v parametru @param $langId
+
++translation() SG7_Db_Table_Row_Abstract
+Vrací řádek s překladem

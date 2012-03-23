@@ -1,0 +1,15 @@
+===========================
+= SG7_Constant_Adapter_Db =
+===========================
+
+Třída: SG7_Constant_Adapter_Db
+Implementuje: SG7_Constant_Adapter_Interface
+
+Slouží k ukládání a načítání konstant z databáze. Konfigurační pole má prvky:
+
+*Zend_Db_Table_Abstract tableClass - instance nebo jméno třídy s daty
+*string keyColumn (key) - jméno sloupce s klíčem
+*string valueColumn (value) - jméno sloupce s hodnotou
+
+Hodnoty keyColumn a valueColumn jsou nepovinné a výchozí hodnoty jsou uvedeny v závorkách.
+Pokud je v prvku tableClass uveden řetězec, pokusí se program vytvořit instanci třídy.

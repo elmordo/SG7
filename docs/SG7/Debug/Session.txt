@@ -1,0 +1,67 @@
+=====================
+= SG7_Debug_Session =
+=====================
+
+Třída: SG7_Debug_Session
+Implementuje: ArrayAccess, Iterator
+
+Třída SG7_Debug_Session uchovává informace o aktuálním debugovacím procesu.
+Jedná se o strukturu fronty, kam postupně přicházejí jendotlivé ladící výstupy. Jednotlivé záznamyuchovává ve struktuře SG7_Debug_Record.
+
+Vlasntosti
+==========
+
+-_pos int
+Aktuální pozice procházení záznamů
+
+-_records array
+Pole obsahující prvky typu SG7_Debug_Record se záznamy výstupů
+
+-_count int
+Celkový počet záznamů
+
+Metody
+======
+
++write($data) SG7_Debug_Session
+Vytvoří novou instanci typu SG7_Debug_Record s příslušnými daty.
+Vrací referenci na sebe sama
+
++getAll() array
+Vrací pole obshující všechny záznamy
+
++toArray() array
+Vrací všechny záznamy jako pole
+
+Implementace ArrayAccess
+------------------------
+
+offsetExists($offset) bool
+vrací TRUE, pokud záznam s indexem @param $offset existuje. Jinak vrací FALSE
+
+offsetGet($offset) SG7_Debug_Record
+Vrací záznam s indexem @param $offset
+
+offsetSet($offset) void
+Nedělá nic.
+
+offsetUnset($offset) void
+Nedělá nic
+
+Implementace Iterator
+---------------------
+
+current() SG7_Debug_Record
+Vrací záznam, na který ukazuje @property $_pos
+
+key() int
+Vrací hodnotu @property $_key
+
+next() SG7_Debug_Record
+Posune pozici o jedno a vrací daný prvek
+
+rewid() void
+Nastaví ukazatel @property $_pos na hodnotu 0
+
+valid() bool
+Pokud je pozice validní, vrací TRUE, jinak FALSE

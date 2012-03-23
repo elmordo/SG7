@@ -1,0 +1,44 @@
+====================
+= SG7_Debug_Record =
+====================
+
+Třída: SG7_Debug_Record
+
+Tato třída uchovává informace o záznamu z ladění. Uchovává timestamp, kdy záznam vznikl, data a případně jméno hodnoty
+
+Vlastnosti
+==========
+
+-_data string
+Vlastní data z ladění
+
+-_timestmap float
+Časová značka, kdy záznam vznikl
+
+-_name string
+Případné jméno záznamu (například proměnné)
+
+Metody
+======
+
+__construct($config)
+Vytvoří instanci třídy a nastaví data v @param $config. Config může být buď řetězec obsahující data výstupu ladění.
+Druhá možnost je, že obshauje asociativní pole s klíči
+* string data - data ladění
+* float timestamp (null) - čas vzniku ladění
+* string name (null) - jméno záznamu
+
+data() string
+vrací hodnotu uloženou v @property $_data
+
+name() string
+vrací název záznamu uložená v @property $_name
+ 
+timestamp() float
+vrací časovou značku uloženou v @property $_timestamp
+
+toArray() array
+vrací pole obsahující informace o daném záznamu. Pole je asociativní a má prvky
+*string data - informace uložená v @property $_data
+*float timestamp - časová značka uložená v @property $_timestamp
+*string name - název záznamu uložený v @property $_name

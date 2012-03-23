@@ -1,0 +1,13 @@
+=============
+= SG7_Debug =
+=============
+
+Třída: SG7_Debug
+Předek: Zend_Debug
+
+Rozšiřuje možnosti Zend_Debug o ukládání dat do datového úložiště, možnosti namespace jednotlivých výstupů, časových značek začátku debugu a tak dále
+
+Vlastnosti
+==========
+
+#_adapter Zend_Debug_Adapter_Interface

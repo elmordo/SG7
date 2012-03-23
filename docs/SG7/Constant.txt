@@ -1,0 +1,33 @@
+================
+= SG7_Constant =
+================
+
+Třída SG7_Constant
+
+Třída obsahuje pouze statické metody a slouží pro snadné načítání jednoduchých konfiguračních dat.
+Data jsou načítána pomocí adaptéru, který implementuje rozhraní SG7_Constant_Adapter_Interface
+
+Vlastnosti
+==========
+
+--$_adapter SG7_Constant_Adapter_Interface
+Obshauje instanci adaptéru
+
+Metody
+======
+
+++setUp($adapter, array $config = null)
+Nastaví adaptér. Pokud je @param $adapter instancí SG7_Constant_Adapter, je druhý parametr ignorován
+Pokud je řetězec, vytvoří se instance třídy, která se jmenuje @param $adapter a konstruktoru se předá @param $config
+
+++get($name, $default = null) mixed
+Vrací konstantu jménem @param $name přečtenou z adaptéru. Pokud konstanta neexistuje vrací hodnotu @param $default
+
+++isset($name) bool
+Zkontroluje, jestli konstanta jména @param $name existuje. Vrací TRUE pokud ano, jinak vrací FALSE
+
+++set($name, $value) void
+Nastaví konstantu jménem @param $name na hodnotu @param value.
+
+++unset($name) void
+Odebere konstantu @param $name

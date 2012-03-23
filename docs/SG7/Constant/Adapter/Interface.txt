@@ -1,0 +1,24 @@
+==================================
+= SG7_Constant_Adapter_Interface =
+==================================
+
+Rozhraní: SG7_Constant_Adapter_Interface
+
+Šablona pro pozdejší implementaci adaptérem
+
+Metody
+======
+__construct(array $config = null)
+Konstruktor s parametry předávanými v @param $config
+
++get($name) mixed
+Vrací konstantu jménem @param $name přečtenou z adaptéru. Pokud konstanta neexistuje vrací hodnotu NULL
+
++isset($name) bool
+Zkontroluje, jestli konstanta jména @param $name existuje. Vrací TRUE pokud ano, jinak vrací FALSE
+
++set($name, $value) void
+Nastaví konstantu jménem @param $name na hodnotu @param value.
+
++unset($name) void
+Odebere konstantu @param $name

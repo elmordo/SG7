@@ -1,0 +1,49 @@
+======================
+= SG7_Model_Row_User =
+======================
+
+Třída: SG7_Model_User_Row
+Předek: SG7_Db_Table_Row_Abstract
+
+Obsahuje řádek tabulky uživatelů. Má metody na kontrolu validity hesla, odhlášení a změnu hesla. 
+Definuje také události, které se volají, pokud se uživatel odhlásí nebo jsou provedeny změny.
+
+Vlastnosti
+==========
+
+#_hashMethod string|closure
+---------------------------
+
+Obsahuje funkci, která se použije pro hash hesla. (Jméno nebo přímo closure funkci)
+
+Metody
+======
+
++isPasswordSame($psw, $hashed = false)
+--------------------------------------
+
+Zkontroluje, jestli heslo předné @param $psw souhlasí se zadaným heslem
+Pokud je přpínač @param $hashed přepnut na hodnotu TRUE, vstup @param $psw se nebude hashovat
+
++changePassword($psw)
+---------------------
+
+Změní aktuální heslo na hodnotu @param $psw
+
++hashPassword($psw)
+-------------------
+
+Zahashuje heslo pomocí funkce uložené v @property #_hashMethod a vrací jeho hodnotu
+
++signOut()
+----------
+
+Odhlásí uživatele.
+Volá @method onSignOut, která provede změny v řádku (například přehodí přepínač nebo zapíše událost do logu).
+Po provedení změn je řádek uložen.
+
+#_onSignOut()
+-------------
+
+Provede změny v řádku a další příkazy, které jsou vyžadovány při odhlášení uživatele.
+Jedná se o metodu, kterou později přepisuje potomek a v této třídě je prázdná

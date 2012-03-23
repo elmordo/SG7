@@ -1,0 +1,16 @@
+====================================
+= SG7_Db_Table_Rowset_Translatable =
+====================================
+
+Třída: SG7_Db_Table_Rowset_Translatable
+Předek: SG7_Db_Table_Rowset_Abstract
+
+Přidává metodu, která umožňuje přeložit do vybraného jazyka všechny řádky v seznamu.
+Řádky musí být typu SG7_Db_Table_Row_Translatable a třída tabulky musí být typu SG7_Db_Table_Translatable
+
+Metody
+======
+
++translate($langId)
+
+Přeloží řádky do jazyka, který je definován @param $langId

@@ -1,0 +1,27 @@
+=============================
+= SG7_Db_Table_Row_Abstract =
+=============================
+
+Třída: SG7_Db_Table_Row_Abstract
+Předek: Zend_Db_Table_Row_Abstract
+Typ: Abstract
+
+Rozšiřuje standardní třídu řádku tabulky o black list hodnot, které nemohou být updatovány metodou Zend_Db_Table_Row_Abstract::setFromArray.
+Toto rozšíření je v reakci na chybu ActiveRecord z Ruby on Rails, která umožňovala při neošetřených vsupech updatovat všechny prvky databáze.
+Při updatu výše zmíněnou metodou budou dané sloupce ignorovány. Update magickou metodou Zend_Db_Table_Row_Abstract::__set() je ovšem update možný.
+
+Vlastnosti
+==========
+
+#_blackList array
+Seznam jmen sloupců, které budou při updatu ze setFromArray ignorovány.
+Jsou získávány ze zdrojové tabulky
+
+Metody
+======
+
++__construct(array $config)
+Nastaví seznam ignorovaných sloupců pro SG7_Db_Table_Row_Abstract::setFromArray ze zdrojové tabulky
+
++setFromArray(array $array)
+Nastaví hodnoty z pole a ignoruje hodnoty obsažené v #_blackList

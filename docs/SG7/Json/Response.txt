@@ -1,0 +1,113 @@
+=====================
+= SG7_Json_Response =
+=====================
+
+Třída: SG7_Json_Response
+Předek: stdClass
+Implementuje: ArrayAccess
+
+Třída standardizuje odpověď pomocí formátu JSON.
+Obsahuje informaci o stavu číselně i možnost předat zprávu ve formě řetězce. K tomuto účelu obsahuje předdefinované metody pro často používané stavy a je možné definovat stav vlastní.
+Data ukládá ve asociativního pole. Při překladu do Json je navíc zapsána časová značka vygenerování.
+
+Vlastnosti
+==========
+
++data array = array()
+---------------------
+
+Obsahuje asociatibní pole s daty výsledku
+
++status string = "UNKNOWN"
+--------------------------
+
+Řetězec definující stav konce
+
++statusCode int = 0
+-------------------
+
+Kód stavu 
+
++timestamp int
+--------------
+
+Časová značka odeslání odpovědi
+
+Metody
+======
+
++__get($name)
+-------------
+
+Vrací položku z @property $data jménem @param $name
+
++__set($name, $value)
+---------------------
+
+Položku @param $name v poli @property $data nastaví na hodnotu $value
+
++__isset($name)
+---------------
+
+Zkontroluje, jestli pole @property $data obsahuje položku jménem @param $name
+Vrací TRUE pokud ano, vrací FALSE pokud ne.
+
++__unset($name)
+---------------
+
+Zlikviduje položku @param $name v poli @property $data
+
++__toString()
+-------------
+
+Převede celý objekt na JSON řetězec
+
++offsetGet($offset)
+-------------------
+
+provede __get($offset)
+
++offsetSet($offset, $value)
+---------------------------
+
+provede __set($offset, $value)
+
++offsetExists($offset)
+----------------------
+
+provede __isset($offset)
+
++offsetUnset($offset)
+---------------------
+
+provede __unset($offset)
+
++setStatus($status, $statusCode = 0)
+------------------------------------
+
+Nastaví stav @property $status na hodnotu @param $status a kód stavu @property $statusCode na hodnotu @param $statusCode
+
++setOk()
+--------
+
+Nastaví stav @property $status na hodnotu "OK" a kód stavu @property $statusCode na hodnotu 200
+
++setNotFound()
+--------------
+
+Nastaví stav @property $status na hodnotu "NOT_FOUND" a nastaví kód @property $statusCode na hodnotu 404
+
++setForbidden()
+---------------
+
+Nastaví stav @property $status na hodnotu "FORBIDDEN" a nastaví kód @property $statusCode na hodnotu 403
+
++setConflict()
+--------------
+
+Nastaví stav @property $status na hodnotu "CONFLICT" a nastaví kód @property $statusCode na hodnotu 409
+
++setBad()
+---------
+
+Nastaví stav @property $status na hodnotu "BAD_REQUEST" a nastaví kód @property $statusCode na hodnotu 400

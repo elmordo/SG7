@@ -1,0 +1,47 @@
+======================================
+= SG7_Db_Table_Abstract_Translatable =
+======================================
+
+Třída: SG7_Db_Table_Abstract_Translatable
+Předek: SG7_Db_Table_Abstract
+Typ: Abstract
+
+Díky tomuto rozšíření je možné jednoduše načítat a sparovat překlady dat z databáze.
+Používá standardní relační vlastnosti tabulek typu Zend_Db_Table_Abstract.
+Obsahuje definice potřebné pro načtení překladů a metodu, která tyto definice zabalí do asociativního pole a vrátí. Zbytek režie má na starosti SG7_Table_Row_Translatable
+
+Zvláštní nastavení
+------------------
+
+#_rowClass = "SG7_Db_Table_Row_Translatable"
+Nastaví typ vraceného řádku na přeložitelný řádek
+
+Vlastnosti
+----------
+
+#_langCol string
+Jméno sloupce, které identifikuje jazyk, do kterého se překládá
+
+#_refKey string
+jméno referenčního klíče Zend_Db_Table_Abstract::$_referenceMap, který bude použit pro načtení překladu
+
+#_rewriteCols array
+asociativní pole, které obsahuje informace, jak přepisovat překládané hodnoty polde schématu klíč => hodnota
+Klíč je název sloupce v tabulce překladů
+Hodnota je název sloupce v tabulce, která je překládána a kam se bude překlad zapisovat
+
+#_translationSettings array
+Pole generované při vytváření instance, které obsahuje nastavení překladů s následujícími klíči:
+langCol
+refKey
+rewriteCols
+translationTable
+
+#_translationTable string
+jméno třídy tabulky, která obsahuje překlady
+
+Metody
+------
+
++getTranslationSettings()
+Vrací nastavení překladů

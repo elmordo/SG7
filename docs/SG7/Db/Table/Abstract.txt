@@ -1,0 +1,21 @@
+=========================
+= SG7_Db_Table_Abstract =
+=========================
+
+Třída: SG7_Db_Table_Abstract
+Předek: Zend_Db_Table_Abstract
+Typ: Abstract
+
+Do původní abstraktní třídy přidává možnost definovat seznam sloupců, které bude řádek ignorovat pokud se zavolá metoda SG7_Db_Table_Row_Abstract::setFromArray()
+
+Vlastnosti
+==========
+
+#_blackList array = array()
+Seznam sloupců, které budou ignorovány.
+
+Metody
+======
+
++getBlackList() array
+Vrací seznam ignorovaných sloupců

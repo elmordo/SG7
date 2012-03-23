@@ -1,0 +1,38 @@
+===============================
+= SG7_Debug_Adapter_Interface =
+===============================
+
+Rozhraní: SG7_Debug_Adapter_Interface
+
+Definuje rozhraní, které následně implementují adaptéry pro ukládání dat z debugu
+
+Metody
+======
+
+__construct(array $config = null)
+---------------------------------
+
+Konstruktor, kterému se předává parametr v poli
+
+clearSessions()
+---------------
+
+Vymaže debugovaná data
+
+getSessions() array
+-------------------
+
+vrací nalezený seznam debugů
+
+load($id) SG7_Debug_Session
+---------------------------
+
+Načte data ze session
+
+start($id = null);
+------------------
+
+write(SG7_Debug_Session $data)
+------------------------------
+
+Zapíše ladící výstup do úložiště
