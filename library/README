@@ -1,0 +1,8 @@
+Toto je adresář knihoven.
+Sem patří nalinkovat (ve windows přidat zástupce) na knihovnu Zend (Zend-XXX/library/Zend kde XXX je označení verze)
+Případně další použité knihovny. Ty ale linkovat opravdu jen v případě nejvyšší nouze, aby se omezila závislost na knihovnách třetích stran.
+Pokud přesto bude další knihovna linkovaná, tak ji nezapomeň přidat do souboru .gitignore (přidej řádek "library/<jmeno_adresare>"), aby se neuploadovala na server. A taky ji zapiš sem, aby ostatní věděli, že si ji mají nalinkovat taky
+
+Nalinkované knihovny v adresáři
+===============================
+Zend (http://framework.zend.com - http://framework.zend.com/download/latest)

@@ -1,0 +1,7 @@
+V tomto adresáři je vlastní kód knihovny SG7
+
+Adresářová struktura vychází z konvencí Zend, tzn že podtržítko v názvu třídy znamená podadresář a pokud se část jména skládá z více slov, použije se CamelCase.
+Příklad:
+
+Jméno třídy: SG7_Db_Table_Row_NejakyPodtyp
+Cesta k souboru: SG7/Db/Table/Row/NejakyPodtyp.php

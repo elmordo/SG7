@@ -1,0 +1,6 @@
+Tady se nachází dokumentace.
+Každý soubor .php má ekvivalent .txt kde je popsán obsah souboru. Každý modul má diagram závislostí a dědičnosti.
+Pro tvorbu diagramu je použit návrhář Dia:
+
+Stažení pro linux - zpravidla v repozitářích, případně http://live.gnome.org/Dia/Download
+Stažení pro windows - http://dia-installer.de/
