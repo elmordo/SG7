@@ -1,0 +1,26 @@
+<table border="1" cellspacing="2" cellpadding="2">
+	<?php echo $this->partial($this->lang . "-thead.phtml"); ?>
+	<tbody>
+		<?php 
+		/** @var SG7_Debug_Session_Record $record */
+		foreach ($this->session as $record) {
+			?>
+		<tr>
+			<td>
+				<?php echo $record->name(); ?>
+			</td>
+			<td>
+				<pre><?php echo $record->content(); ?></pre>
+			</td>
+			<td>
+				<pre><?php echo $record->comment(); ?></pre>
+			</td>
+			<td>
+				<?php echo $record->created(); ?>
+			</td>
+		</tr>
+			<?php 
+		}
+		?>
+	</tbody>
+</table>
